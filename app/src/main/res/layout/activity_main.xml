@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/textView3"
@@ -29,5 +29,29 @@
         android:textSize="34sp"
         tools:layout_editor_absoluteX="172dp"
         tools:layout_editor_absoluteY="207dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:text="Multiple Choice"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="568dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="141dp"
+        android:layout_height="128dp"
+        android:text="Learn"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="398dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:text="Typing Test"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="568dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
