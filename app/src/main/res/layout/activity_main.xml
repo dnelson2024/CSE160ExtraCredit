@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/appTitleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="235dp"
+        android:layout_height="73dp"
         android:fontFamily="casual"
         android:text="MásFrases"
         android:textSize="48sp"
@@ -20,5 +20,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="207dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
