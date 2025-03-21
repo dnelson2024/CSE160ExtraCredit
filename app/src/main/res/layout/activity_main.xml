@@ -10,24 +10,50 @@
 
     <TextView
         android:id="@+id/appTitleTextView"
-        android:layout_width="235dp"
-        android:layout_height="73dp"
-        android:fontFamily="casual"
+        android:layout_width="389dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="111dp"
+        android:fontFamily="@font/zilla_slab_bold"
         android:text="MásFrases"
-        android:textSize="48sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="text"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="207dp" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="378dp"
+        android:layout_height="73dp"
+        android:text="Food"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="357dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="16dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="362dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="16dp"
+        android:text="Travel"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="415dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="485dp"
+        android:layout_height="195dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="949dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
