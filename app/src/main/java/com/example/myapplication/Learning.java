@@ -68,6 +68,12 @@ public class Learning extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.taxi);
                 } else if (i==1){
                     imageView.setImageResource(R.drawable.money);
+                } else if (i==2){
+                    imageView.setImageResource(R.drawable.house1);
+                } else if (i==3){
+                    imageView.setImageResource(R.drawable.right);
+                } else if (i==4){
+                    imageView.setImageResource(R.drawable.left);
                 }
                 else{
                     imageView.setImageResource(R.drawable.books);
