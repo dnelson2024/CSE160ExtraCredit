@@ -15,7 +15,7 @@ public class Learning extends AppCompatActivity {
 
     String category = "Travel";
     // added 2
-    String[] TravelInfo = {"Español: ¿Dónde puedo encontrar un taxi? \nEnglish: Where can I find a taxi?", "Español: ¿Cuánto cuesta? \nEnglish: How much is this?", "Español: ¿Dónde está este lugar? \nEnglish: Where is this place?", "Español: A la derecha \nEnglish: To the right", "Español: A la izquierda \nEnglish: To the left", "Español: Yo necesito un... \nEnglish: I need a..."};
+    String[] TravelInfo = {"Español: ¿Dónde puedo encontrar un taxi? \nEnglish: Where can I find a taxi?", "Español: ¿Cuánto cuesta? \nEnglish: How much is this?", "Español: ¿Dónde está este lugar? \nEnglish: Where is this place?", "Español: A la derecha \nEnglish: To the right", "Español: A la izquierda \nEnglish: To the left", "Español: Yo necesito una botella de agua. \nEnglish: I need a bottle of water."};
     String[] IntroInfo = {"Español: Me llamo... \nEnglish: My name is...", "Español: Soy de... \nEnglish: I am from...", "Español: ¿Como estás? \nEnglish: How are you?", "Español: ¿Puedo ir al baño?\nEnglish: Can I use the bathroom?", "Español: Mucho gusto \nEnglish: Nice to meet you", "Español: Bien \nEnglish: Good"};
 
     String[] RestaurantInfo = {"Español: ¿Qué me recomienda? \nEnglish: What do you recommend?", "Español: ¿Tienen algún plato vegetariano?\nEnglish: Do you have a vegetarian option?", "Español: Con salsa \nEnglish: With sauce", "Español: Quiero pedir... \nEnglish: I would like to order...", "Español: Me gustaría más agua, por favor \nEnglish: I would like more water, please", "Español: ¿Tiene una reserva? \nEnglish: Do you have a reservation?"};
@@ -74,6 +74,8 @@ public class Learning extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.right);
                 } else if (i==4){
                     imageView.setImageResource(R.drawable.left);
+                } else if (i==5){
+                    imageView.setImageResource(R.drawable.waterbottle);
                 }
                 else{
                     imageView.setImageResource(R.drawable.books);
