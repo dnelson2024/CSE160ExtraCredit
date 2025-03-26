@@ -27,8 +27,8 @@
         android:layout_width="378dp"
         android:layout_height="73dp"
         android:text="Food"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="321dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="236dp" />
 
     <Button
         android:id="@+id/button5"
