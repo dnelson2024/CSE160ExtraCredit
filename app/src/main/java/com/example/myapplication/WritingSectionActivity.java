@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -49,6 +50,31 @@ public class WritingSectionActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_writing_section);
 
+
+        TextView catTextView = findViewById(R.id.categoryTextView);
+        String category = "Travel";
+        if("Travel".equals(category)){
+            catTextView.setText("Travel");
+        }
+        //introductory info
+        else if("IntroInfo".equals(category)){
+            catTextView.setText("Introductory Phrases");
+        }
+        //restuarant
+        else if("Restaurant".equals(category)){
+            catTextView.setText("Restaurant");
+        }
+        //hobbies and interests
+        else if("HobbiesNInterests".equals(category)){
+            catTextView.setText("Hobbies and Interests");
+        }
+        else if ("null".equals(category)){
+            catTextView.setText("Error");
+        }
+        else {
+            catTextView.setText("Error");
+        }
+
         text = (TextView) findViewById(R.id.textView4);
         textbox = (TextInputEditText) findViewById(R.id.TextBox);
         ansText = (TextView) findViewById(R.id.rightAns);
@@ -57,6 +83,17 @@ public class WritingSectionActivity extends AppCompatActivity {
         answers2 = new String[] {"A la derecha", "A la izquierda", "Necesito un"};
         int rand = (int) Math.floor((Math.random()*4));
         text.setText(questions[rand]);
+
+        ImageView imageView = findViewById(R.id.imageView1);
+        if (questions[rand] == "I need a") {
+            imageView.setImageResource(R.drawable.waterbottle);
+        } else if (questions[rand] == "To the right"){
+            imageView.setImageResource(R.drawable.right);
+        } else if (questions[rand] == "To the left"){
+            imageView.setImageResource(R.drawable.left);
+        } else {
+            imageView.setImageResource(R.drawable.books);
+        }
         key = answers[rand];
         key2 = answers2[rand];
 
@@ -95,7 +132,7 @@ public class WritingSectionActivity extends AppCompatActivity {
                     textbox.setTextColor(Color.rgb(0, 230, 0));
                     Button btn = (Button) findViewById(v.getId());
                     textbox.setEnabled(false);
-                    ansText.setText("Correct Answer:\n" +answers);
+                    ansText.setText("Correct Answer:\n" +key);
                     ansText.setVisibility(View.VISIBLE);
                     btn.setText("Next");
                 }
@@ -111,7 +148,7 @@ public class WritingSectionActivity extends AppCompatActivity {
         if (checker == 2) {
             Button btn = (Button) findViewById(v.getId());
             textbox.setEnabled(false);
-            ansText.setText("Correct Answer:\n" +key);
+            ansText.setText("Correct Answer:\n" + key);
             ansText.setVisibility(View.VISIBLE);
             btn.setText("Next" );
 
