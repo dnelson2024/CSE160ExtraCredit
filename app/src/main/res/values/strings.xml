@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">My Application</string>
+    <string name="dialog_start_game">Are you ready to start the game?</string>
+    <string name="start">Start Game</string>
+    <string name="cancel">Cancel</string>
 </resources>
