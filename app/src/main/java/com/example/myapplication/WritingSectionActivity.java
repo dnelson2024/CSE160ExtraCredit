@@ -113,7 +113,7 @@ public class WritingSectionActivity extends AppCompatActivity {
             textbox.setEnabled(false);
             ansText.setText("Correct Answer:\n" +key);
             ansText.setVisibility(View.VISIBLE);
-            btn.setText("Next");
+            btn.setText("Next" );
 
         }
 
