@@ -23,29 +23,35 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Space" />
 
+
     <Button
         android:id="@+id/button6"
         android:layout_width="310dp"
         android:layout_height="104dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="771dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="16dp"
         android:onClick="clicked"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="347dp"
-        android:layout_height="48dp"
+        android:id="@+id/TextBox"
+        android:layout_width="352dp"
+        android:layout_height="53dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="535dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="310dp"
-        android:hint="hint"
+        android:hint="La respuesta"
         android:isScrollContainer="false"
         android:singleLine="true"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -59,5 +65,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/rightAns"
+        android:layout_width="349dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="594dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="184dp"
+        android:text="Correct"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
