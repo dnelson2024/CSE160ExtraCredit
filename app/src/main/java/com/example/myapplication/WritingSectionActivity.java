@@ -22,6 +22,8 @@ public class WritingSectionActivity extends AppCompatActivity {
     TextInputEditText textbox;
     String[] questions;
     String[] answers, answers2;
+    String key = "";
+    String key2 = "";
 
 
     int checker = 0;
@@ -53,7 +55,11 @@ public class WritingSectionActivity extends AppCompatActivity {
         questions = new String[] {"To the right","To the left","I need a"};
         answers = new String[] {"A la derecha", "A la izquierda", "Yo necesito un"};
         answers2 = new String[] {"A la derecha", "A la izquierda", "Necesito un"};
-        text.setText("To the right");
+        int rand = (int) Math.floor((Math.random()*4));
+        text.setText(questions[rand]);
+        key = answers[rand];
+        key2 = answers2[rand];
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -66,7 +72,6 @@ public class WritingSectionActivity extends AppCompatActivity {
 
         String question = "" + text.getText();
         int ansLength = 0;
-        String key = "a la derecha";
         String ans = "";
         String ansNS = "";
         int count = 0;
@@ -81,7 +86,7 @@ public class WritingSectionActivity extends AppCompatActivity {
 
             if (ans.length() == key.length()) {
                 for (int i = 0; i < ans.length(); i++) {
-                    if (ans.toLowerCase().charAt(i) == key.toLowerCase().charAt(i)) {
+                    if (ans.toLowerCase().charAt(i) == key.toLowerCase().charAt(i) || ans.toLowerCase().charAt(i) == key2.toLowerCase().charAt(i)) {
                         count += 1;
                         Log.d("Success", "" + count);
                     }
@@ -106,7 +111,7 @@ public class WritingSectionActivity extends AppCompatActivity {
         if (checker == 2) {
             Button btn = (Button) findViewById(v.getId());
             textbox.setEnabled(false);
-            ansText.setText("Correct Answer:\n" +answers);
+            ansText.setText("Correct Answer:\n" +key);
             ansText.setVisibility(View.VISIBLE);
             btn.setText("Next");
 
