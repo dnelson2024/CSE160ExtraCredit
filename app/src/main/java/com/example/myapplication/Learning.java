@@ -64,20 +64,19 @@ public class Learning extends AppCompatActivity {
         if (i < 6) {
             if ("Travel".equals(category)) {
                 textView.setText(TravelInfo[i]);
-                if (i == 0){
+                if (i == 0) {
                     imageView.setImageResource(R.drawable.taxi);
-                } else if (i==1){
+                } else if (i == 1) {
                     imageView.setImageResource(R.drawable.money);
-                } else if (i==2){
+                } else if (i == 2) {
                     imageView.setImageResource(R.drawable.house1);
-                } else if (i==3){
+                } else if (i == 3) {
                     imageView.setImageResource(R.drawable.right);
-                } else if (i==4){
+                } else if (i == 4) {
                     imageView.setImageResource(R.drawable.left);
-                } else if (i==5){
+                } else if (i == 5) {
                     imageView.setImageResource(R.drawable.waterbottle);
-                }
-                else{
+                } else {
                     imageView.setImageResource(R.drawable.books);
                 }
             } else if ("IntroInfo".equals(category)) {
@@ -88,16 +87,11 @@ public class Learning extends AppCompatActivity {
                 textView.setText(HobbiesNInterestsInfo[i]);
             }
         }
-
-
-
         i += 1;
         if (i == 6){
             i = 0;
         }
-
     }
-
         /*
         for (int i = 0; i < 4; i++){
             if("category1".equals(category)) {
