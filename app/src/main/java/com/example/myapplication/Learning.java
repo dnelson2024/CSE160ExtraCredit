@@ -108,7 +108,6 @@ public class Learning extends AppCompatActivity {
 
 public void exit (View v){
     startActivity(new Intent(Learning.this, MainActivity.class));
-
 }
 
 

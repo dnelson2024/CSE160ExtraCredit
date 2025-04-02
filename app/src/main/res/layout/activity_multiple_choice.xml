@@ -8,6 +8,24 @@
     android:background="#B876AF"
     tools:context=".MultipleChoice">
 
+    <Button
+        android:id="@+id/nextButton2"
+        android:layout_width="106dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="303dp"
+        android:layout_marginBottom="827dp"
+        android:backgroundTint="#654321"
+        android:fontFamily="@font/zilla_slab_bold"
+        android:onClick="exit"
+        android:text="Exit"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/questionText"
         android:layout_width="400dp"
