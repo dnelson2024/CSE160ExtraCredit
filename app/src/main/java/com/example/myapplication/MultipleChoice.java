@@ -1,14 +1,15 @@
 package com.example.myapplication;
 
+import static android.graphics.Color.rgb;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import androidx.fragment.app.DialogFragment;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
 
@@ -56,10 +57,6 @@ public class MultipleChoice extends AppCompatActivity {
 
     }
 
-    public void exit (View v){
-        startActivity(new Intent(MultipleChoice.this, MainActivity.class));
-    }
-
     public static class StartGameDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -102,6 +99,12 @@ public class MultipleChoice extends AppCompatActivity {
         }
 
         Question currentQuestion = questions.get(currentQuestionIndex);
+        ImageView imageView = findViewById(R.id.imageView3);
+        if (questions.get(0).equals("¿Dónde puedo encontrar algunos libros?")){
+            imageView.setImageResource(R.drawable.books);
+        } else if (questions.get(2).equals("¿Dónde puedo comprar una chamarra?")){
+            imageView.setImageResource(R.drawable.jacket);
+        }
         questionText.setText(currentQuestion.getQuestion());
 
         ArrayList<String> answers = new ArrayList<>();
@@ -115,7 +118,7 @@ public class MultipleChoice extends AppCompatActivity {
 
         for (int i = 0; i < 4; i++) {
             answerButtons[i].setText(answers.get(i));
-            answerButtons[i].setBackgroundColor(Color.LTGRAY);
+            answerButtons[i].setBackgroundColor(Color.parseColor("#654321"));
             answerButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
