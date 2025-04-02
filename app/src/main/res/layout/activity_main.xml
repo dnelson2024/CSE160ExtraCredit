@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7A9A9"
+    android:background="#6B4773"
     tools:context=".MainActivity">
 
     <TextView
@@ -24,36 +24,73 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="378dp"
-        android:layout_height="73dp"
+        android:layout_width="360dp"
+        android:layout_height="75dp"
         android:text="Food"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="236dp" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="357dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="16dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="517dp" />
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="430dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="362dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="360dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="24dp"
         android:text="Travel"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="415dp" />
+        tools:layout_editor_absoluteY="522dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="360dp"
+        android:layout_height="75dp"
+        android:text="Introductions"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="360dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="24dp"
+        android:text="Hobbies"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="609dp" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="485dp"
-        android:layout_height="195dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="949dp" />
+        android:layout_width="340dp"
+        android:layout_height="113dp"
+        android:text="Multiple Choice"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="340dp"
+        android:layout_height="113dp"
+        android:text="Learning"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="441dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="340dp"
+        android:layout_height="113dp"
+        android:text="Writing"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="554dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="237dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="84dp"
+        android:text="Choose a Topic to Learn..."
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="236dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

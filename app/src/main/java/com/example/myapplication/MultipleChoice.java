@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import androidx.fragment.app.DialogFragment;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
@@ -52,6 +54,10 @@ public class MultipleChoice extends AppCompatActivity {
         new StartGameDialogFragment().show(getSupportFragmentManager(), "GAME_DIALOG");
 
 
+    }
+
+    public void exit (View v){
+        startActivity(new Intent(MultipleChoice.this, MainActivity.class));
     }
 
     public static class StartGameDialogFragment extends DialogFragment {

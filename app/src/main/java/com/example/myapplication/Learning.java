@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -105,7 +106,9 @@ public class Learning extends AppCompatActivity {
             }
         }*/
 
-
+public void exit (View v){
+    startActivity(new Intent(Learning.this, MainActivity.class));
+}
 
 
 }
