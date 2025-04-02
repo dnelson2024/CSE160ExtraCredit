@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String topic;
+    private Button introductions;
+    private Button food;
+    private Button travel;
+    private Button hobbies;
+
 
 
     @Override
@@ -21,5 +29,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+        food = findViewById(R.id.button2);
+        travel = findViewById(R.id.button2);
+        introductions = findViewById(R.id.button2);
+        hobbies = findViewById(R.id.button2);
+
+//        food.setOnClickListener() {
+//
+//        }
+
     }
 }
