@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -105,6 +106,9 @@ public class WritingSectionActivity extends AppCompatActivity {
         });
     }
 
+    public void exit (View v){
+        startActivity(new Intent(WritingSectionActivity.this, MainActivity.class));
+    }
     public void clicked(View v){
 
         String question = "" + text.getText();
