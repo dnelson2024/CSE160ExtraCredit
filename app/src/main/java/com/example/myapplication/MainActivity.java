@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private Button travel;
     private Button hobbies;
 
+    private Button writing;
+    private Button learning;
+    private Button multiplechoice;
+
 
 
     @Override
@@ -34,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         hobbies = findViewById(R.id.button5);
 
 
+        writing = findViewById(R.id.button9);
+        learning = findViewById(R.id.button8);
+        multiplechoice = findViewById(R.id.button7);
+
         food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -42,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
                 travel.setVisibility(View.INVISIBLE);
                 introductions.setVisibility(View.INVISIBLE);
                 hobbies.setVisibility(View.INVISIBLE);
+
+                writing.setVisibility(View.VISIBLE);
+                learning.setVisibility(View.VISIBLE);
+                multiplechoice.setVisibility(View.VISIBLE);
             }
         });
 
@@ -54,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 travel.setVisibility(View.INVISIBLE);
                 introductions.setVisibility(View.INVISIBLE);
                 hobbies.setVisibility(View.INVISIBLE);
+                writing.setVisibility(View.VISIBLE);
+                learning.setVisibility(View.VISIBLE);
+                multiplechoice.setVisibility(View.VISIBLE);
             }
         });
 
@@ -65,6 +81,44 @@ public class MainActivity extends AppCompatActivity {
                 travel.setVisibility(View.INVISIBLE);
                 introductions.setVisibility(View.INVISIBLE);
                 hobbies.setVisibility(View.INVISIBLE);
+                writing.setVisibility(View.VISIBLE);
+                learning.setVisibility(View.VISIBLE);
+                multiplechoice.setVisibility(View.VISIBLE);
+            }
+        });
+
+        hobbies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                topic = "Hobbies";
+                food.setVisibility(View.INVISIBLE);
+                travel.setVisibility(View.INVISIBLE);
+                introductions.setVisibility(View.INVISIBLE);
+                hobbies.setVisibility(View.INVISIBLE);
+                writing.setVisibility(View.VISIBLE);
+                learning.setVisibility(View.VISIBLE);
+                multiplechoice.setVisibility(View.VISIBLE);
+            }
+        });
+
+        writing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, WritingSectionActivity.class));
+            }
+        });
+
+        learning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, Learning.class));
+            }
+        });
+
+        multiplechoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, MultipleChoice.class));
             }
         });
 
