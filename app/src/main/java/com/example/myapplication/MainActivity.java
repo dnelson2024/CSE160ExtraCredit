@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    public String topic;
+    public static String topic;
     private Button introductions;
     private Button food;
     private Button travel;

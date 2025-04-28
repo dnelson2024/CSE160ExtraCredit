@@ -54,11 +54,12 @@ public class MultipleChoice extends AppCompatActivity {
         answerButtons[3] = findViewById(R.id.button4);
         loadQuestions();
         displayNewQuestion();
-        new StartGameDialogFragment().show(getSupportFragmentManager(), "GAME_DIALOG");
+        //new StartGameDialogFragment().show(getSupportFragmentManager(), "GAME_DIALOG");
 
 
     }
 
+    /*
     public static class StartGameDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -75,11 +76,12 @@ public class MultipleChoice extends AppCompatActivity {
                             // User cancels the dialog.
                         }
                     });
-            // Create the AlertDialog object and return it.
+            // Create the AlertDialog object and return it
             return builder.create();
         }
-    }
 
+    }
+       */
     public void exit (View v){
         startActivity(new Intent(MultipleChoice.this, MainActivity.class));
     }
