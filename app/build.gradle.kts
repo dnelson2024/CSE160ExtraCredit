@@ -6,6 +6,11 @@ android {
     namespace = "com.example.myapplication"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding=true
+        dataBinding=true
+    }
+
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 24
@@ -13,7 +18,9 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
