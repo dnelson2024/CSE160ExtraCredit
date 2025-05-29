@@ -39,7 +39,8 @@ public class wsQuestions extends Fragment {
     private String key = "";
     private String key2 = "";
     private int score = 0;
-    private MediaPlayer mediaPlayer;
+    private MediaPlayer right_Sound;
+    private MediaPlayer wrong_Sound;
     private FragmentWsQuestionsBinding binding;
 
 
@@ -56,7 +57,8 @@ public class wsQuestions extends Fragment {
         binding = FragmentWsQuestionsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        //mediaPlayer = MediaPlayer.create(this,R.raw.test2);
+        right_Sound = MediaPlayer.create(requireContext(), R.raw.correct_s1);
+        wrong_Sound = MediaPlayer.create(requireContext(), R.raw.wrong_s1);
 
 
         text = (TextView) binding.textView4;
@@ -96,7 +98,7 @@ public class wsQuestions extends Fragment {
         String ans = "";
         String ansNS = "";
         int count = 0;
-//        // Initial volume setting (e.g., full volume)
+        // Initial volume setting (e.g., full volume)
 //        mediaPlayer.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
 //        mediaPlayer.start();
 
@@ -117,6 +119,8 @@ public class wsQuestions extends Fragment {
                     }
                     if(count == key.length()){
                         textbox.setTextColor(Color.rgb(0, 200, 0));
+                        right_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
+                        right_Sound.start();
                         textbox.setEnabled(false);
                         score += 50;
                         ansText.setText("Correct Answer:\n" +key);
@@ -125,10 +129,14 @@ public class wsQuestions extends Fragment {
                     }
                     else{
                         textbox.setTextColor(Color.RED);
+                        wrong_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
+                        wrong_Sound.start();
                     }
                 }
                 else{
                     textbox.setTextColor(Color.RED);
+                    wrong_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
+                    wrong_Sound.start();
                 }
                 checker += 1;
             }
@@ -164,7 +172,6 @@ public class wsQuestions extends Fragment {
 //            btn.setText("Check!");
 
             questionNum = questionNum + 1;
-
             FragmentTransaction ft = getParentFragmentManager().beginTransaction();
 
             // Set slide animations
