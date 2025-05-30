@@ -23,19 +23,19 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.w3c.dom.Text;
 
 public class WritingSectionActivity extends AppCompatActivity {
-    private WritingSectionActivity binding;
-    TextView text, ansText;
-    TextInputEditText textbox;
-    String[] questions;
-    String[] answers, answers2;
-    String key = "";
-    String key2 = "";
-    int score = 0;
-    MediaPlayer mediaPlayer;
+//    private WritingSectionActivity binding;
+//    TextView text, ansText;
+//    TextInputEditText textbox;
+//    String[] questions;
+//    String[] answers, answers2;
+//    String key = "";
+//    String key2 = "";
+//    int score = 0;
 
-
-    int checker = 0;
-    int questionNum = 0;
+//
+//    int checker = 0;
+    public int questionNum = 0;
+    public int score = 0;
     @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -57,7 +57,6 @@ public class WritingSectionActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_writing_section);
 
-        mediaPlayer = MediaPlayer.create(this,R.raw.test2);
 
         // //
         TextView catTextView = findViewById(R.id.categoryTextView);

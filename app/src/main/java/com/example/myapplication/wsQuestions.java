@@ -38,7 +38,8 @@ public class wsQuestions extends Fragment {
     private String[] answers, answers2;
     private String key = "";
     private String key2 = "";
-    private int score = 0;
+    private WritingSectionActivity wsActivity;
+
     private MediaPlayer right_Sound;
     private MediaPlayer wrong_Sound;
     private FragmentWsQuestionsBinding binding;
@@ -46,7 +47,7 @@ public class wsQuestions extends Fragment {
 
 
     int checker = 0;
-    int questionNum = 0;
+    //int questionNum = 0;
     public wsQuestions(){
 
     }
@@ -56,6 +57,7 @@ public class wsQuestions extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentWsQuestionsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        wsActivity = (WritingSectionActivity) getActivity();
 
         right_Sound = MediaPlayer.create(requireContext(), R.raw.correct_s1);
         wrong_Sound = MediaPlayer.create(requireContext(), R.raw.wrong_s1);
@@ -122,7 +124,7 @@ public class wsQuestions extends Fragment {
                         right_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
                         right_Sound.start();
                         textbox.setEnabled(false);
-                        score += 50;
+                        wsActivity.score += 50;
                         ansText.setText("Correct Answer:\n" +key);
                         ansText.setVisibility(View.VISIBLE);
                         btn.setText("Next");
@@ -148,7 +150,7 @@ public class wsQuestions extends Fragment {
                 btn.setText("Next");
             }
         }
-        else if(btn.getText().equals("Next") && questionNum < 4 && !(btn.getText().equals("Check!"))){
+        else if(btn.getText().equals("Next") && wsActivity.questionNum < 4 && !(btn.getText().equals("Check!"))){
 //            int rand = (int) Math.floor((Math.random()*3));
 //            text.setText(questions[rand]);
 //            Log.i("worked", "clicked: ");
@@ -171,7 +173,7 @@ public class wsQuestions extends Fragment {
 //            ansText.setVisibility(View.INVISIBLE);
 //            btn.setText("Check!");
 
-            questionNum = questionNum + 1;
+            wsActivity.questionNum = wsActivity.questionNum + 1;
             FragmentTransaction ft = getParentFragmentManager().beginTransaction();
 
             // Set slide animations
@@ -186,6 +188,18 @@ public class wsQuestions extends Fragment {
 
         }
         else{
+            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+
+            // Set slide animations
+            ft.setCustomAnimations(
+                    R.anim.slide_in,  // Enter animation
+                    R.anim.slide_out  // Exit animation
+            );
+
+            // Replace current fragment with a NEW instance of itself
+            ft.replace(R.id.fragment_container, new EndScore())
+                    .commit();
+
             Log.i("Else","Else");
 //            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
 //
