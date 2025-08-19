@@ -36,6 +36,13 @@ public class WritingSectionActivity extends AppCompatActivity {
 //    int checker = 0;
     public int questionNum = 0;
     public int score = 0;
+    public int questionR = 0;
+    public int questionW = 0;
+    public long startTime = System.nanoTime();
+    public long endTime = 0;
+
+
+
     @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);

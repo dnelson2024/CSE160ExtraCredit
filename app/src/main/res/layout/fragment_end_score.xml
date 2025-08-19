@@ -20,7 +20,7 @@
         android:src="@android:drawable/ic_delete" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/timeElapsed"
         android:layout_width="286dp"
         android:layout_height="57dp"
         android:layout_marginStart="20dp"
@@ -39,7 +39,7 @@
         tools:text="Time: 00:00" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/qRight"
         android:layout_width="286dp"
         android:layout_height="57dp"
         android:layout_marginStart="20dp"
@@ -58,7 +58,7 @@
         tools:text="Questions Right: 0" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/qWrong"
         android:layout_width="286dp"
         android:layout_height="57dp"
         android:layout_marginStart="20dp"
@@ -76,29 +76,9 @@
         app:layout_constraintVertical_bias="0.0"
         tools:text="Questions Wrong: 0" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="286dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="650dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="417dp"
-        android:fontFamily="@font/zilla_slab_bold"
-        android:text="Score: 0"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="Score: 0" />
-
-
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/timeBonus"
         android:layout_width="286dp"
         android:layout_height="37dp"
         android:layout_marginStart="60dp"
@@ -117,7 +97,26 @@
         tools:text="Time Bonus: 0" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/score"
+        android:layout_width="286dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="417dp"
+        android:fontFamily="@font/zilla_slab_bold"
+        android:text="Score: 0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Score: 0" />
+
+    <TextView
+        android:id="@+id/correctBonus"
         android:layout_width="286dp"
         android:layout_height="37dp"
         android:layout_marginStart="60dp"
@@ -134,24 +133,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:text="Correct Bonus: 0 x 50" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="385dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="775dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="417dp"
-        android:fontFamily="@font/zilla_slab_bold"
-        android:text="Random Word: \nla mariposa : the butterfly"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="Random Word: \nla mariposa : the butterfly" />
 
 </FrameLayout>

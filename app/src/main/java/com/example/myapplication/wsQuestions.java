@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import static androidx.databinding.DataBindingUtil.setContentView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -125,6 +126,7 @@ public class wsQuestions extends Fragment {
                         right_Sound.start();
                         textbox.setEnabled(false);
                         wsActivity.score += 50;
+                        wsActivity.questionR += 1;
                         ansText.setText("Correct Answer:\n" +key);
                         ansText.setVisibility(View.VISIBLE);
                         btn.setText("Next");
@@ -133,12 +135,14 @@ public class wsQuestions extends Fragment {
                         textbox.setTextColor(Color.RED);
                         wrong_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
                         wrong_Sound.start();
+
                     }
                 }
                 else{
                     textbox.setTextColor(Color.RED);
                     wrong_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
                     wrong_Sound.start();
+
                 }
                 checker += 1;
             }
@@ -147,6 +151,7 @@ public class wsQuestions extends Fragment {
                 textbox.setEnabled(false);
                 ansText.setText("Correct Answer:\n" + key);
                 ansText.setVisibility(View.VISIBLE);
+                wsActivity.questionW += 1;
                 btn.setText("Next");
             }
         }
@@ -188,6 +193,7 @@ public class wsQuestions extends Fragment {
 
         }
         else{
+            wsActivity.endTime = System.nanoTime();
             FragmentTransaction ft = getParentFragmentManager().beginTransaction();
 
             // Set slide animations
@@ -197,10 +203,11 @@ public class wsQuestions extends Fragment {
             );
 
             // Replace current fragment with a NEW instance of itself
+
             ft.replace(R.id.fragment_container, new EndScore())
                     .commit();
 
-            Log.i("Else","Else");
+            Log.i("Else", "" + wsActivity.score);
 //            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
 //
 //            // Set slide animations
