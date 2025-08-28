@@ -65,7 +65,6 @@ public class WritingSectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_writing_section);
 
 
-        // //
         TextView catTextView = findViewById(R.id.categoryTextView);
         String category = "Travel";
         if("Travel".equals(category)){
@@ -121,6 +120,7 @@ public class WritingSectionActivity extends AppCompatActivity {
         });
 
         load_wsQuestions();
+        //load_mcQuestions();
     }
 
     public void exit (View v){
@@ -131,6 +131,12 @@ public class WritingSectionActivity extends AppCompatActivity {
         wsQuestions fragment = new wsQuestions();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();  // Apply changes
     }
+
+    public void load_mcQuestions(){
+        MultipleChoice fragment = new MultipleChoice();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();  // Apply changes
+    }
+
 
     public void next_Question(){
 

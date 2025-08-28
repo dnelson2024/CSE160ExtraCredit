@@ -2,14 +2,12 @@ package com.example.myapplication;
 
 import static android.graphics.Color.rgb;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import androidx.fragment.app.DialogFragment;
-
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,12 +20,16 @@ import android.graphics.Color;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Arrays;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.myapplication.databinding.FragmentMcQuestionsBinding;
+import com.example.myapplication.databinding.FragmentWsQuestionsBinding;
+
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Collections;
 
-public class MultipleChoice extends AppCompatActivity {
+public class MultipleChoice extends Fragment {
 
     private TextView questionText;
     private Button[] answerButtons = new Button[4];
@@ -35,29 +37,60 @@ public class MultipleChoice extends AppCompatActivity {
     private int currentQuestionIndex = 0;
     private Button button1, button2, button3, button4;
     private String correctAnswer;
+    private WritingSectionActivity wsActivity;
+    private MediaPlayer right_Sound;
+    private MediaPlayer wrong_Sound;
+    private FragmentMcQuestionsBinding binding;
+    private Button selectedButton = null;
+
+
+    public MultipleChoice(){
+
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_multiple_choice);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = FragmentMcQuestionsBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        wsActivity = (WritingSectionActivity) getActivity();
 
-        questionText = findViewById(R.id.questionText);
-        answerButtons[0] = findViewById(R.id.button1);
-        answerButtons[1] = findViewById(R.id.button2);
-        answerButtons[2] = findViewById(R.id.button3);
-        answerButtons[3] = findViewById(R.id.button4);
+        right_Sound = MediaPlayer.create(requireContext(), R.raw.correct_s1);
+        wrong_Sound = MediaPlayer.create(requireContext(), R.raw.wrong_s1);
+        boolean chosen =false;
+
+        questionText = binding.questionText;
+        answerButtons[0] = binding.button1;
+        answerButtons[1] = binding.button2;
+        answerButtons[2] = binding.button3;
+        answerButtons[3] = binding.button4;
         loadQuestions();
         displayNewQuestion();
+        Button button = binding.button10;
+        button.setOnClickListener(v -> {
+            checkAnswer(view);
+        });
+
+
+        return view;
+    }
+
+
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        EdgeToEdge.enable(this);
+//        setContentView(R.layout.fragment_mc_questions);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+
+
         //new StartGameDialogFragment().show(getSupportFragmentManager(), "GAME_DIALOG");
 
 
-    }
+
 
     /*
     public static class StartGameDialogFragment extends DialogFragment {
@@ -82,9 +115,6 @@ public class MultipleChoice extends AppCompatActivity {
 
     }
        */
-    public void exit (View v){
-        startActivity(new Intent(MultipleChoice.this, MainActivity.class));
-    }
 
     private void loadQuestions() {
         questions = new ArrayList<>();
@@ -107,7 +137,7 @@ public class MultipleChoice extends AppCompatActivity {
         }
 
         Question currentQuestion = questions.get(currentQuestionIndex);
-        ImageView imageView = findViewById(R.id.imageView3);
+        ImageView imageView = binding.imageView4;
         if (questions.get(0).equals("¿Dónde puedo encontrar algunos libros?")){
             imageView.setImageResource(R.drawable.books);
         } else if (questions.get(2).equals("¿Dónde puedo comprar una chamarra?")){
@@ -127,29 +157,85 @@ public class MultipleChoice extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             answerButtons[i].setText(answers.get(i));
             answerButtons[i].setBackgroundColor(Color.parseColor("#654321"));
+
             answerButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    checkAnswer((Button) v);
-                }
+                    if (binding.button10.getText().equals("Check!")) {
+                        clickedAnswer((Button) v);
+                    }
+                    }
             });
+
+//            answerButtons[i].setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    checkAnswer((Button) v);
+//
+//
+//                }
+//            });
         }
     }
 
-    private void checkAnswer(Button selectedButton) {
-        if (selectedButton.getText().toString().equals(correctAnswer)) {
-            selectedButton.setBackgroundColor(Color.GREEN);
-        } else {
-            selectedButton.setBackgroundColor(Color.RED);
+    public void clickedAnswer(View v){
+
+        for (int i = 0; i < 4; i++) {
+            answerButtons[i].setBackgroundColor(Color.parseColor("#654321"));
+        }
+        v.setBackgroundColor(Color.parseColor("#c7803a"));
+        selectedButton = (Button) v;
+    }
+    private void checkAnswer(View v) {
+        Button btn = (Button) binding.button10;
+        if (selectedButton != null && btn.getText().equals("Check!")) {
+            if (selectedButton.getText().toString().equals(correctAnswer)) {
+                wsActivity.questionR += 1;
+                wsActivity.score += 30;
+                selectedButton.setBackgroundColor(Color.rgb(0, 200, 0));
+                right_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
+                right_Sound.start();
+
+            } else {
+                selectedButton.setBackgroundColor(Color.RED);
+                wsActivity.questionW += 1;
+                wrong_Sound.setVolume(1.0f, 1.0f); // Default to full volume of the MediaPlayer
+                wrong_Sound.start();
+
+                for (int i = 0; i < 4; i++) {
+                    if (answerButtons[i].getText().toString().equals(correctAnswer)) {
+                        answerButtons[i].setBackgroundColor(Color.rgb(0, 200, 0));
+                    }
+
+                }
+            }
+            selectedButton = null;
+            btn.setText("Next");
         }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                currentQuestionIndex++;
-                displayNewQuestion();
-            }
-        }, 1000);
+        else if(btn.getText().equals("Next")){
+            wsActivity.questionNum = wsActivity.questionNum + 1;
+            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+
+            // Set slide animations
+            ft.setCustomAnimations(
+                    R.anim.slide_in,  // Enter animation
+                    R.anim.slide_out  // Exit animation
+            );
+
+            // Replace current fragment with a NEW instance of itself
+            ft.replace(R.id.fragment_container, new wsQuestions())
+                    .commit();
+
+        }
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                currentQuestionIndex++;
+//                displayNewQuestion();
+//            }
+//        }, 1000);
     }
 
     private static class Question {

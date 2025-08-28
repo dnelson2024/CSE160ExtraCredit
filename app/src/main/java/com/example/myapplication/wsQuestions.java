@@ -1,17 +1,9 @@
 package com.example.myapplication;
 
-import static androidx.databinding.DataBindingUtil.setContentView;
-
-import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -155,7 +147,7 @@ public class wsQuestions extends Fragment {
                 btn.setText("Next");
             }
         }
-        else if(btn.getText().equals("Next") && wsActivity.questionNum < 4 && !(btn.getText().equals("Check!"))){
+        else if(btn.getText().equals("Next") && wsActivity.questionNum < 6 && !(btn.getText().equals("Check!"))){
 //            int rand = (int) Math.floor((Math.random()*3));
 //            text.setText(questions[rand]);
 //            Log.i("worked", "clicked: ");
@@ -188,7 +180,7 @@ public class wsQuestions extends Fragment {
             );
 
             // Replace current fragment with a NEW instance of itself
-            ft.replace(R.id.fragment_container, new wsQuestions())
+            ft.replace(R.id.fragment_container, new MultipleChoice())
                     .commit();
 
         }
