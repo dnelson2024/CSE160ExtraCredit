@@ -28,7 +28,7 @@ public class Main extends Fragment {
         View view = binding.getRoot();
         Main = (MainActivity) getActivity();
 
-        Button food = binding.intro;
+        Button food = binding.food;
         Button travel = binding.travel;
         Button introductions = binding.intro;
         Button hobbies = binding.hobbies;

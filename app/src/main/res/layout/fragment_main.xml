@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/intro"
         android:layout_width="360dp"
         android:layout_height="75dp"
         android:layout_marginStart="26dp"
@@ -15,6 +15,7 @@
         android:layout_marginBottom="321dp"
         android:backgroundTint="#654321"
         android:text="Introductions"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,36 +62,6 @@
         android:layout_marginBottom="134dp"
         android:backgroundTint="#654321"
         android:text="Travel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="360dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="335dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="321dp"
-        android:backgroundTint="#654321"
-        android:text="Introductions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/intro"
-        android:layout_width="360dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="335dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="321dp"
-        android:backgroundTint="#654321"
-        android:text="Introductions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
